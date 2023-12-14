@@ -76,7 +76,7 @@ export const About = () => {
   
 
   return (
-    <section className="h-[860px] pb-12">
+    <section className="h-[860px] pb-12 pt-5">
       <div className="container mx-auto">
 
         <div className='flex gap-x-3 items-center justify-center font-bold text-4xl mt-20 mb-20'>
@@ -92,7 +92,7 @@ export const About = () => {
 
 
           <div className="flex-1">
-            <div className="flex flex-col items-center justify-center gap-y-2 px-16">
+            <div className="flex flex-col items-center justify-center gap-y-2">
               <div className="inline-flex items-center justify-center py-1.5 px-3 gap-x-8 border border-gray-300 rounded-full">
                 {tabs.map((tab) => (
                   <button
