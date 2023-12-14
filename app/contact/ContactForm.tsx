@@ -3,15 +3,29 @@
 import { useState } from "react";
 import axios from "axios";
 import { useMutation } from "@tanstack/react-query";
-import { error } from "console";
+
+
+interface FormValues {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
+interface MutationData {
+  data: {
+    message: string;
+  };
+}
+
 
 export const ContactForm = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [subject, setSubject] = useState('');
-  const [message, setMessage] = useState('');
-  const [showSuccessAlert, setSuccessAlert] = useState(false);
-  const [showErrorAlert, setErrorAlert] = useState(false);
+  const [name, setName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [subject, setSubject] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
+  const [showSuccessAlert, setSuccessAlert] = useState<boolean>(false);
+  const [showErrorAlert, setErrorAlert] = useState<boolean>(false);
 
   const resetFormData = ()=> {
     setName('');
@@ -20,7 +34,7 @@ export const ContactForm = () => {
     setMessage('');
   }
 
-  const mutation = useMutation( { mutationFn: (formData) => {
+  const mutation = useMutation<MutationData, Error, FormValues>( { mutationFn: (formData) => {
     return axios.post('/api/contact', formData)
     
   },
@@ -44,26 +58,11 @@ export const ContactForm = () => {
      }
 
   });
-
-
-  interface FormValues {
-    name: string;
-    email: string;
-    subject: string;
-    message: string;
-  }
   
 
   const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
-    const formData: FormValues = {
-      name,
-      email,
-      subject,
-      message,
-    };
-
-    mutation.mutateAsync({formData});    
+    mutation.mutateAsync({ name, email, subject, message });    
     
   };
 
