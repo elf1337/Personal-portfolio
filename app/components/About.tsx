@@ -99,7 +99,7 @@ export const About = () => {
                 {tabs.map((tab) => (
                   <button
                     key={tab.id}
-                    onClick={() => handleTabClick(tab.id)}
+                    onClick={() => handleTabClick(tab.id as 'personalInfo' | 'qualification' | 'skills')}
                     className={`tab-button ${activeTab === tab.id ? ' bg-orange-600 px-3 py-1.5 rounded-full text-white font-medium text-sm transition-all duration-300' :''}`}
                   >
                     {tab.label}
