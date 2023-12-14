@@ -1,6 +1,4 @@
 'use client';
-
-// Import necessary modules and components
 import { useState } from 'react';
 import DevImg from "./DevImg";
 import { User2, MailIcon, PhoneCall, HomeIcon, Calendar, GraduationCap, Briefcase, CircleUserRound } from 'lucide-react';
