@@ -8,7 +8,7 @@ import { User2, MailIcon, PhoneCall, HomeIcon, Calendar, GraduationCap, Briefcas
 export const About = () => {
   const [activeTab, setActiveTab] = useState('personalInfo');
 
-  const handleTabClick = (tab) => {
+  const handleTabClick = (tab: string) => {
     setActiveTab(tab);
   };
 
