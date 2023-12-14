@@ -45,9 +45,25 @@ export const ContactForm = () => {
 
   });
 
-  const handleSubmit = (e) => {
+
+  interface FormValues {
+    name: string;
+    email: string;
+    subject: string;
+    message: string;
+  }
+  
+
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
-    mutation.mutateAsync({ name, email, subject, message });    
+    const formData: FormValues = {
+      name,
+      email,
+      subject,
+      message,
+    };
+
+    mutation.mutateAsync({formData});    
     
   };
 
