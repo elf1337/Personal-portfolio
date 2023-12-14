@@ -6,9 +6,9 @@ import DevImg from "./DevImg";
 import { User2, MailIcon, PhoneCall, HomeIcon, Calendar, GraduationCap, Briefcase, CircleUserRound } from 'lucide-react';
 
 export const About = () => {
-  const [activeTab, setActiveTab] = useState('personalInfo');
+  const [activeTab, setActiveTab] = useState<'personalInfo' | 'qualification' | 'skills'>('personalInfo');
 
-  const handleTabClick = (tab: string) => {
+  const handleTabClick = (tab: 'personalInfo' | 'qualification' | 'skills') => {
     setActiveTab(tab);
   };
 
@@ -48,23 +48,20 @@ export const About = () => {
   ]
 
 
-  const tabContent = {
+  const tabContent: { [key in 'personalInfo' | 'qualification' | 'skills']: JSX.Element } ={
     personalInfo: (
       <div className='flex flex-col'>
         <h2 className='text-3xl font-bold mb-4 text-center'>Aspiring Front-End Developer</h2>
         <p className='mb-8   text-justify'>Self-taught enthusiast diving into the world of web development while leveraging former experience in Python scripting. 
           Excited to turn ideas into reality through code.</p>
-          <div className='flex flex-col items-center justify-center gap-y-4 md:grid md:grid-cols-3 md:gap-y-4'>
-            {PersonalInfo.map((link, index)=>{
-              return (
-                <div key={index} className='flex gap-x-2 items-center'>
-                  <div >{link.icon}</div>
-                  <div >{link.text}</div>
-                </div>
-
-              )
-            })}
-          </div>
+        <div className='flex flex-col items-center justify-center gap-y-4 md:grid md:grid-cols-3 md:gap-y-4'>
+          {PersonalInfo.map((info, index) => (
+            <div key={index} className='flex gap-x-2 items-center'>
+              <div>{info.icon}</div>
+              <div>{info.text}</div>
+            </div>
+          ))}
+        </div>
       </div>
     ),
     qualification: (
@@ -78,6 +75,7 @@ export const About = () => {
       </div>
     ),
   };
+  
 
   return (
     <section className="h-[860px] pb-12">
