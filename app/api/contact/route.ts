@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
 
-    const dbConnection = process.env.DB_HOST;
+    const dbConnection: any = process.env.DB_HOST;
     const dbName = 'contactData';
     const dbCollection = 'Contacts';
 
