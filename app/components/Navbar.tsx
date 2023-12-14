@@ -14,7 +14,7 @@ const Links = [
 ]
 
 
-const Navbar = ({ ContainerStyle, LinkStyle, }) => {
+const Navbar = ({ ContainerStyle, LinkStyle, }: {ContainerStyle: string, LinkStyle: string}) => {
     const path = usePathname();
   return (
     <nav className={ContainerStyle}>{
