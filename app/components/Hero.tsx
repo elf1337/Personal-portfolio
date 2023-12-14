@@ -24,7 +24,7 @@ const Hero = () => {
             <DevImg ContainerStyle="bg-shapebold w-[510px] h-[462px] bg-no-repeat  absolute" ImgSrc="/dev-image.png" />
           </div>
         </div>
-        <div className="absolute left-2/4 bottom-44 animate-bounce">
+        <div className="absolute left-1/2  top-3/4 bottom-44 animate-bounce mt-10">
           <RiArrowDownSLine size={30}/>
         </div>
       </div>
