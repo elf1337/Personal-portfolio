@@ -1,9 +1,10 @@
 import { MongoClient } from 'mongodb';
 import { NextRequest, NextResponse } from 'next/server';
 
+
 export async function POST(req: NextRequest) {
 
-    const dbConnection = 'mongodb+srv://dev1337s:nwS4ubSqsWvd5t7H@cluster0.2akpwkb.mongodb.net/?retryWrites=true&w=majority';
+    const dbConnection = process.env.DB_HOST;
     const dbName = 'contactData';
     const dbCollection = 'Contacts';
 
