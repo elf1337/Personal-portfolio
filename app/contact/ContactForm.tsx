@@ -69,8 +69,8 @@ export const ContactForm = () => {
   return (
     
       <div className="mx-auto max-w-2xl py-12 px-4">
-        <h1 className="font-bold text-4xl text-center mb-2">Contact Me</h1>
-        <p className="font-light text-lg mb-8 text-center">Code and Create: Transforming Ideas into Dynamic Web Solutions.</p>
+        <h1 className="font-bold text-3xl md:text-4xl text-center mb-2">Contact Me</h1>
+        <p className="font-light text-sm md:text-lg mb-8 text-center">Code and Create: Transforming Ideas into Dynamic Web Solutions.</p>
 
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col">
