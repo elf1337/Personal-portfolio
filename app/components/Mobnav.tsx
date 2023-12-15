@@ -13,7 +13,7 @@ function Mobnav() {
         <div>
           <div>
             <Logo/>
-            <Navbar ContainerStyle={'flex flex-col gap-y-6 items-center justify-center mt-12'} LinkStyle={'text-2xl'}/>
+            <Navbar ContainerStyle={'flex flex-col gap-y-6 items-center justify-center mt-12'} LinkStyle={'text-xl'}/>
           </div>
         </div>
       </SheetContent>
