@@ -4,7 +4,7 @@ import { RiArrowDownSLine } from "react-icons/ri";
 
 const Hero = () => {
   return (
-    <section className="py-12  xl:py-24 xl:pt-28 h-[84vh] bg-hero  bg-no-repeat bg-bottom bg-cover">
+    <section className="py-10  xl:py-20 h-[84vh] bg-hero  bg-no-repeat bg-bottom bg-cover">
       <div className="container mx-auto">
         <div className="flex justify-between gap-x-8">
           <div className="flex max-w-[600px] flex-col justify-center mx-auto xl:mx-0 text-center xl:text-left ">
